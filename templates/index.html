@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container py-4 ">
+    <div class="text-primary">
+       <h3>Available Momo:</h3>
+    </div>
+    
+    
+    <div class="row  pt-4 " ">
+      {% for momo in momos %}
+        <div class="card col-md-3 " >
+            <img src="/media/{{momo.images}}" class="card-img-top" style="height: 200px;" alt="Fissure in Sandstone"/>
+            <div class="card-body">
+              <h5 class="card-title">{{momo.momo_name}} </h5>
+              <p class="card-text">Price : {{momo.price}} | Category : {{momo.category}}</p> 
+              <a href="{%url 'addCart' momo.uid%}" class="btn btn-primary">Order
+              <i class="fas fa-shopping-cart"></i>
+              </a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    
+  </div>
+  {% endblock content %}

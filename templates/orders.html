@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+<table class="table align-middle">
+    <thead>
+      <tr>
+        <th scope="col">S.No</th>
+        <th scope="col">Total</th>
+        <th scope="col">Date</th>
+        
+       
+      </tr>
+    </thead>
+    <tbody>
+      {% for order in orders %}
+      
+      <tr>
+        <th scope="row">{{forloop.counter}}</th>
+        
+        <td>{{order.get_cart_total}}</td>
+        <td>{{order.created_at}}</td>
+        <td>True</td>
+        
+        
+        
+
+      </tr>
+
+      {% endfor %}
+     
+    </tbody>
+  </table>
+
+
+{% endblock content %}
